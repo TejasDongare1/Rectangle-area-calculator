@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+    <style>
+        body {
+            background-color: #21D4FD;
+            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            height: 100vh;
+            background-repeat: no repeat;
+
+        }
+        .container{
+            background-color: white;
+            width: 400px;
+            display: block;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .title{
+            text-align: center;
+            color: white;
+        }
+        .number-input{
+            width: 90%;
+            display: block;
+            margin: 20px auto;
+        }
+        .btn{
+            width: 100px;
+            display: block;
+            margin: 10px auto;
+            border: none;
+            background-color: black;
+            font-size: 20px;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .answer{
+            text-align: center;
+            font-size: 20px;
+        }
+        @media screen and (max-width: 768px) {
+            .container{
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Area of The Rectangle Calculator</h1>
+    <div class="container">
+       
+        <input type="text" Placeholder="Enter First Number" name="" class="number-input" id="num1">
+        <input type="text" Placeholder="Enter Second Number" class="number-input"  id="num2">
+        <p class="answer" id="ans">Area: </p>
+        <button class="btn" id="btn1" onclick="calculate()">Calculate</button>
+        <button class="btn" id="btn2" onclick="reset()">Reset</button>
+    </div>
+</body>
+
+<script>
+   
+   function calculate() {
+
+    const input1 = document.getElementById("num1")
+    const input2 = document.getElementById("num2")
+
+    const product = parseInt(input1.value) * parseInt(input2.value);
+
+    const ansElement = document.getElementById("ans")
+
+    ansElement.innerText = `Area: ${product} `;
+   
+   }
+
+   function reset() {
+     const reset1 =  document.getElementById('num1');
+     const reset2 =  document.getElementById('num2');
+     const reset3 =  document.getElementById('ans');
+     reset1.value = "";
+     reset2.value= "";
+     reset3.innerHTML ="Area:";
+   }
+</script>
+</html>
