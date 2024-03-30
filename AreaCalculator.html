@@ -21,6 +21,7 @@
             margin: auto;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
         .title{
             text-align: center;
@@ -46,10 +47,11 @@
         .answer{
             text-align: center;
             font-size: 20px;
+            font-weight: bolder;
         }
         @media screen and (max-width: 768px) {
             .container{
-                max-width: 90%;
+                max-width: 80%;
             }
         }
     </style>
@@ -65,30 +67,34 @@
         <button class="btn" id="btn1" onclick="calculate()">Calculate</button>
         <button class="btn" id="btn2" onclick="reset()">Reset</button>
     </div>
+
+
+
+    
+    <script>
+   
+        function calculate() {
+     
+         const input1 = document.getElementById("num1")
+         const input2 = document.getElementById("num2")
+     
+         const product = parseInt(input1.value) * parseInt(input2.value);
+     
+         const ansElement = document.getElementById("ans")
+     
+         ansElement.innerText = `Area: ${product} `;
+        
+        }
+     
+        function reset() {
+          const reset1 =  document.getElementById('num1');
+          const reset2 =  document.getElementById('num2');
+          const reset3 =  document.getElementById('ans');
+          reset1.value = "";
+          reset2.value= "";
+          reset3.innerHTML ="Area:";
+        }
+     </script>
 </body>
 
-<script>
-   
-   function calculate() {
-
-    const input1 = document.getElementById("num1")
-    const input2 = document.getElementById("num2")
-
-    const product = parseInt(input1.value) * parseInt(input2.value);
-
-    const ansElement = document.getElementById("ans")
-
-    ansElement.innerText = `Area: ${product} `;
-   
-   }
-
-   function reset() {
-     const reset1 =  document.getElementById('num1');
-     const reset2 =  document.getElementById('num2');
-     const reset3 =  document.getElementById('ans');
-     reset1.value = "";
-     reset2.value= "";
-     reset3.innerHTML ="Area:";
-   }
-</script>
 </html>
